@@ -11,8 +11,8 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "clients")
-public class Client {
+@Table(name = "customer")
+public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,8 +35,8 @@ public class Client {
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-            name = "client_value",
-            joinColumns = @JoinColumn(name = "client_id"),
+            name = "customer_value",
+            joinColumns = @JoinColumn(name = "customer_id"),
             inverseJoinColumns = @JoinColumn(name = "value_id")
     )
     private Set<Value> values;

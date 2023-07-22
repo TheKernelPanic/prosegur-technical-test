@@ -29,5 +29,5 @@ public class Value {
     private Attribute attribute;
 
     @ManyToMany(mappedBy = "values", fetch = FetchType.LAZY)
-    private Set<Client> clients;
+    private Set<Customer> customers;
 }

@@ -25,10 +25,9 @@ create table attribute
     id     bigint auto_increment
         primary key,
     name   varchar(128) not null
-)
-    collate = utf8mb4_general_ci;
+);
 
-create table clients
+create table customer
 (
     id             bigint auto_increment
         primary key,
@@ -37,8 +36,7 @@ create table clients
     name           varchar(50)  not null,
     second_surname varchar(50)  null,
     ori_entity     varchar(255) not null
-)
-    collate = utf8mb4_general_ci;
+);
 
 create table value
 (
@@ -49,18 +47,16 @@ create table value
     weight       varchar(255) not null,
     constraint FKkj1luvvc2k2de11cmmdt7taiu
         foreign key (attribute_id) references attribute (id)
-)
-    collate = utf8mb4_general_ci;
+);
 
-create table client_value
+create table customer_value
 (
-    client_id bigint not null,
-    value_id  bigint not null,
-    primary key (client_id, value_id),
-    constraint FKcnbph9mfmsvf443cqqakc9dq5
-        foreign key (value_id) references value (id),
-    constraint FKegsqyl8kx0buq8chkrx840wir
-        foreign key (client_id) references clients (id)
-)
-    collate = utf8mb4_general_ci;
+    customer_id bigint not null,
+    value_id    bigint not null,
+    primary key (customer_id, value_id),
+    constraint FK8crovc3dol7fx2ckjupwep7u9
+        foreign key (customer_id) references customer (id),
+    constraint FKsvsjtsg3vk57gdyo8m9k12yvh
+        foreign key (value_id) references value (id)
+);
 ```
