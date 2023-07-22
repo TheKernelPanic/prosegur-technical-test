@@ -11,7 +11,9 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "customer")
+@Table(
+        name = "customer", uniqueConstraints = {@UniqueConstraint(columnNames = {"dni"})}
+)
 public class Customer {
 
     @Id

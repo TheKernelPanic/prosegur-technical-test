@@ -24,7 +24,9 @@ create table attribute
     weight int          not null,
     id     bigint auto_increment
         primary key,
-    name   varchar(128) not null
+    name   varchar(128) not null,
+    constraint UKhpwum0iq12fs4ej5d0tgy6wsn
+        unique (name)
 );
 
 create table customer
@@ -35,7 +37,9 @@ create table customer
     first_surname  varchar(50)  not null,
     name           varchar(50)  not null,
     second_surname varchar(50)  null,
-    ori_entity     varchar(255) not null
+    ori_entity     varchar(255) not null,
+    constraint UK9jf7jfr0lltn86gmjn14l71d8
+        unique (dni)
 );
 
 create table value

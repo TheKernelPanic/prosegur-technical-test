@@ -10,7 +10,9 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "attribute")
+@Table(
+        name = "attribute", uniqueConstraints = {@UniqueConstraint(columnNames = {"name"})}
+)
 public class Attribute {
 
     @Id
