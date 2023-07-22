@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  database_service:
+    image: mariadb:11.0.2
+    container_name: database_service
+    environment:
+      MARIADB_USER: ${DB_USER}
+      MARIADB_DATABASE: ${DB_NAME}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - '3306:3306'
+    volumes:
+      - '../.db-volume:/var/lib/mysql'
+networks:
+  technical_test:
+    driver: bridge
