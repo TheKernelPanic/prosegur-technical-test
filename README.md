@@ -48,7 +48,7 @@ create table value
     id           bigint auto_increment
         primary key,
     value        varchar(255) not null,
-    weight       varchar(255) not null,
+    weight       int not null,
     constraint FKkj1luvvc2k2de11cmmdt7taiu
         foreign key (attribute_id) references attribute (id)
 );

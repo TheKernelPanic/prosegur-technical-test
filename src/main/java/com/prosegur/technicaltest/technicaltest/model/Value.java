@@ -22,7 +22,7 @@ public class Value {
     private String value;
 
     @Column(nullable = false)
-    private String weight;
+    private int weight;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "attribute_id")
