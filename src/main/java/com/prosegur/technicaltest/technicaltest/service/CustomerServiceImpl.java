@@ -38,10 +38,10 @@ public class CustomerServiceImpl implements CustomerService {
         double score = this.calculateScore(customerOptional.get().getValues());
 
         /**
-         * Según el documento de requerimientos, el formato que aparece en la tabla de resultados experados
+         * Según el documento de requerimientos, el formato que aparece en la tabla de resultados esperados
          * muestra cifras numéricas con formato establecido, el uso de la coma como delimitador de decimales
-         * y la omisión de los decimales en caso de que estos sean 0, es posible que se aplica un formato
-         * y el tratamiento del dato como cadena en la solicitud HTTP.
+         * y la omisión de los decimales en caso de que estos sean 0, es posible que se aplique un formato
+         * y el tratamiento del dato como cadena en la solicitud HTTP para su lectura.
          */
         return new ScoreDto(
           new DecimalFormat("#,##0.#").format(score)
@@ -60,7 +60,10 @@ public class CustomerServiceImpl implements CustomerService {
          * Realizamos el cálculo con el primer elemento de la lista.
          * Eliminamos el primer elemento e iteramos el resto de la lista.
          *
-         * Posible problemática: Pueden existir dos o más clientes con similar puntuación.
+         * TODO: Posible problemática:
+         * Pueden existir dos o más clientes con la misma puntuación.
+         * ¿Qué se debe hacer en ese caso? ¿Retornar una lista con los que tiene las misma puntuación?
+         * ¿Retornar el que tenga la fecha mas antigua?
          */
         double highest = this.calculateScore(customers.get(0).getValues());
         HighestScoreDto highestScoreDto = new HighestScoreDto(customers.get(0).getDni());

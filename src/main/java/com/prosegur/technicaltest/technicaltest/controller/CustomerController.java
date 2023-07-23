@@ -24,7 +24,7 @@ public class CustomerController {
     }
 
     /**
-     * Servicio REST para la obtención de puntuación.
+     * Servicio REST para la obtención de puntuación en base al DNI del cliente.
      */
     @GetMapping(
             path = "/get-score/{dni}",
@@ -46,7 +46,7 @@ public class CustomerController {
     }
 
     /**
-     * Servicio REST para la obtención del cliente con mayor puntuación en base a la entidad.
+     * Servicio REST para la obtención del cliente con mayor puntuación en base a la entidad (ori entity).
      */
     @GetMapping(
             path = "/get-highest-score/{oriEntity}",
