@@ -7,9 +7,11 @@ import com.prosegur.technicaltest.technicaltest.exception.OriEntityHasNoCustomer
 import com.prosegur.technicaltest.technicaltest.service.CustomerService;
 import jakarta.validation.constraints.Pattern;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping(value = "/customer")
@@ -35,8 +37,11 @@ public class CustomerController {
             return ResponseEntity.ok(
                     this.customerService.getScore(dni)
             );
-        } catch (CustomerNotFound $e) {
-            return ResponseEntity.notFound().build();
+        } catch (CustomerNotFound $exception) {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND,
+                    $exception.getMessage()
+            );
         }
     }
 
@@ -54,8 +59,11 @@ public class CustomerController {
             return ResponseEntity.ok(
                     this.customerService.getHighestScore(oriEntity)
             );
-        } catch (OriEntityHasNoCustomers $e) {
-            return ResponseEntity.notFound().build();
+        } catch (OriEntityHasNoCustomers $exception) {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND,
+                    $exception.getMessage()
+            );
         }
     }
 }
