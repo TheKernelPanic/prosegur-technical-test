@@ -1,13 +1,12 @@
 # Prueba técnica - Prosegur
 
-## Inicialización del entorno local
+El proyecto consta de dos configuraciones de persistencia; Una con MariaDB para entorno local y otra con H2 para el desarrollo de pruebas.
 
-Configuración del servidor del bases de datos mediante el uso de docker, en este caso MariaDB.
+[Diagrama UML ilustrativo](https://www.plantuml.com/plantuml/png/bL7HIWCn47pFL-JHAla1aLBR2Wg2u7t1aTkU2xbisUm9-Nj56cboAuUFcTcPdUpialGiynICESn9Q0BkW3_HWoNdR8EzJEVmEtUWA4mX0DjRvxRjh56qzU0xd2cX46TZC0hmgVUWi0fPTlZGfwIcB4oRzK9qdXYEGfVdCuuVaAH1YzeOxTFtrhKdy_LRLzqro-m8SWtTTC8OHqkCJr5GykOFdok3MZb4t2pxN5DeWlMekhpqNMvKzMdz0jB4gu4rqNz36oNUjyKh9daerDQUC0wF8UppM-b4BqbnAkYFnpuV8zRxTn27UGfV)
 
-Crear el fichero de variables de entorno usadas por la configuración de docker.
+## Inicialización del entorno local con MariaDB
 
-
-Ejecutar en el directorio root del proyecto:
+Para ello crear el fichero _.env_ y ejecutar _docker-compose_:
 ```bash
 cp ./docker/.env.dist ./docker/.env
 ```
@@ -15,7 +14,7 @@ cp ./docker/.env.dist ./docker/.env
 docker-compose -p technical_test_prosegur -f ./docker/docker-compose.yaml --env-file ./docker/.env up -d
 ```
 
-# Inicialización de la base de datos
+## Scripts de inicialización de la base de datos con H2
 
 Script para la creación de la estructura de la base de datos:
 
