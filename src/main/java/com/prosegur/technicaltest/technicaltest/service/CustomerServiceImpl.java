@@ -76,6 +76,9 @@ public class CustomerServiceImpl implements CustomerService {
         return highestScoreDto;
     }
 
+    /**
+     * Cálculo de la puntuación en base a la fórmula del requerimiento.
+     */
     private double calculateScore(Set<Value> values) {
 
         double accumulated = 0;

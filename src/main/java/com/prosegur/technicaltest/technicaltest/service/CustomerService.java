@@ -5,6 +5,9 @@ import com.prosegur.technicaltest.technicaltest.dto.ScoreDto;
 import com.prosegur.technicaltest.technicaltest.exception.CustomerNotFound;
 import com.prosegur.technicaltest.technicaltest.exception.OriEntityHasNoCustomers;
 
+/**
+ * Contrato de implementación del servicio
+ */
 public interface CustomerService {
 
     ScoreDto getScore(String dni) throws CustomerNotFound;
