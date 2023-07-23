@@ -12,7 +12,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @Table(
-        name = "customer", uniqueConstraints = {@UniqueConstraint(columnNames = {"dni"})}
+        name = "_customer", uniqueConstraints = {@UniqueConstraint(columnNames = {"dni"})}
 )
 public class Customer {
 
@@ -37,7 +37,7 @@ public class Customer {
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-            name = "customer_value",
+            name = "_customer_value",
             joinColumns = @JoinColumn(name = "customer_id"),
             inverseJoinColumns = @JoinColumn(name = "value_id")
     )

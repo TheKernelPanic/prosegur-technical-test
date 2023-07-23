@@ -11,7 +11,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @Table(
-        name = "attribute", uniqueConstraints = {@UniqueConstraint(columnNames = {"name"})}
+        name = "_attribute", uniqueConstraints = {@UniqueConstraint(columnNames = {"description"})}
 )
 public class Attribute {
 
@@ -20,7 +20,7 @@ public class Attribute {
     private Long id;
 
     @Column(nullable = false, length = 128)
-    private String name;
+    private String description;
 
     @Column(nullable = false)
     private int weight;

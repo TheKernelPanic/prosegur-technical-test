@@ -11,7 +11,7 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "value")
+@Table(name = "_value")
 public class Value {
 
     @Id
@@ -19,7 +19,7 @@ public class Value {
     private Long id;
 
     @Column(nullable = false)
-    private String value;
+    private String description;
 
     @Column(nullable = false)
     private int weight;
