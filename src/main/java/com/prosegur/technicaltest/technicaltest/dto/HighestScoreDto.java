@@ -6,8 +6,8 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class ScoreDto {
+public class HighestScoreDto {
 
-    @JsonProperty("score")
-    private String score;
+    @JsonProperty("customer_dni")
+    public String customerDni;
 }

@@ -1,7 +1,7 @@
 package com.prosegur.technicaltest.technicaltest.exception;
 
 public class CustomerNotFound extends Exception {
-    public CustomerNotFound(String message) {
-        super(message);
+    public CustomerNotFound() {
+        super("Client requested not found");
     }
 }
